@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單輸入雙向綁定-基礎表單元件</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        <p>單行文字 {{message}}</p>
+        <textarea v-model="content"></textarea>
+        <p>多行文字 {{content}}</p>
+        <input type="checkbox" v-model="checkValue" value="A">A
+        <input type="checkbox" v-model="checkValue" value="B">B
+        <input type="checkbox" v-model="checkValue" value="C">C
+        <!-- ALT+SHIFT+↑/↓ = 向上/下複製-->
+        <input type="radio" v-model="radioValue" value="A">A
+        <input type="radio" v-model="radioValue" value="B">B
+        <input type="radio" v-model="radioValue" value="C">C
+        <p>
+            核取方塊:{{checkValue}}
+        </p>
+        <p>
+            單選:{{radioValue}}
+        </p>
+        <select v-model="selectValue">
+            <option value="">請選擇</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <p>
+            dropdownlist:{{selectValue}}
+        </p>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <!-- vue的src -->
+    <script type="text/javascript" src="./formTest.js"></script> 
+</body>
+</html>
