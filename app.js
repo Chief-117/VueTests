@@ -11,7 +11,7 @@ var vm = new Vue({
         isChild:true,
         textColor:'grey',
         bgColor:'skyblue',
-        currentIndex:'',
+        int:-1,
         radius:30,
         name:'',
         age:'',
@@ -54,7 +54,7 @@ var vm = new Vue({
             })
         },
         deletePerson(){
-            this.list.splice(this.index,1)
+            this.list.splice(this.index-1,1)
         },
         counter(){
             console.log(this.$refs.count)
@@ -70,9 +70,12 @@ var vm = new Vue({
             console.log(this.$el)
         },
         change(index){
-            alert(index),
-            alert(this.currentIndex)
-                this.currentIndex=index;
+            console.log(index),//0
+            console.log(this.int)//-1
+                this.int = 
+                    (this.int === index) ? -1 : index;
+                    //改變index的話則永遠 -1 === 0 > 將this.int = this.index 則改變所點的index li
+                    //一樣的話則為 0 === 0 > 則回傳-1 而前端則會顯示為false
         },
         API(){
                 //this.$route = 可以抓到目前之前面url
